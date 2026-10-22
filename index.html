@@ -5,22 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyRecipe</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/script.js" defer></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 </head>
 
 <body>
 
     <header>
+        <button id="temaBtn"> <span class="material-symbols-outlined"> dark_mode </span>Tema scuro </button>
         <h1> <span class="material-symbols-outlined"> chef_hat </span> MyRecipe </h1>
         <p> Il tuo ricettario personale </p>
-        <button id="temaBtn"> Tema scuro <span class="material-symbols-outlined"> dark_mode </span> </button>
+
     </header>
 
+    <br>
     <main>
         <!-- form aggiungi ricetta-->
-        <h2> Aggiungi una ricetta </h2>
-
-        <div class="card">
+        <div class="card">   
+            <h2> Aggiungi una ricetta </h2>
             <form>
                 <input type="text" id="nome" name="nome" placeholder="Nome ricetta" required>
 
@@ -59,11 +62,11 @@
                 <option value="TD">Tempo di cottura (decrescente)</option>
             </select>
         </div>
-
+        <br>
         <!-- card delle ricette -->
         <div class="card">
             <h2>Le mie ricette</h2>
-            <section id="listaRicette "> </section>>
+            <section id="listaRicette "> </section>
         </div>
 
     </main>

@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f7f5ef;
+}
+
+main {
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+header {
+    padding: 30px 50px;
+    width: 100%;
+}
+
+header button {
+    float: right;
+    text-align: center;
+    line-height: 1.5;
+    border: none;
+    color: #7c9a78;
+    border: 1px solid #7c9a78;
+    border-radius: 8px;
+    padding: 10px;
+    width: 150px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+header button .material-symbols-outlined {
+    font-size: 22px;
+    vertical-align: middle;
+    margin-right: 5px;
+
+}
+
+header h1 {
+    font-size: 40px;
+}
+
+header h1 .material-symbols-outlined {
+    font-size: 70px;
+    float: left;
+    margin-right: 10px;
+    color: #7c9a78;
+}
+
+header p {
+    font-size: 20px;
+    color: #384b3f;
+}
+
+/*  CARD  */
+.card {
+    border: 1px solid #f7f5ef;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+/* FORM MAIN */
+h2 {
+    margin: 15px 20px;
+    font-size: 26px;
+}
+
+#nome,
+#categoria,
+#tempo_cottura,
+#cerca,
+#ordinaPer {
+    display: inline-block;
+    width: 30%;
+    padding: 12px;
+    margin: 8px 5px 5px 20px;
+    border-radius: 10px;
+    border: 1px solid #7c9a78;
+    font-size: 0.9em;
+    color: #384b3f;
+}
+
+form textarea {
+    display: block;
+    min-height: 80px;
+    width: 96%;
+    margin: 20px;
+    border-radius: 10px;
+    border: 1px solid #7c9a78;
+    font-size: 1.2em;
+    padding: 12px;
+    color: #384b3f;
+}
+
+form button {
+    display: block;
+    padding: 12px 20px;
+    background-color: #7c9a78;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 1em;
+}
