@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyRecipe</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+</head>
+
+<body>
+
+    <header>
+        <h1> <span class="material-symbols-outlined"> chef_hat </span> MyRecipe </h1>
+        <p> Il tuo ricettario personale </p>
+        <button id="temaBtn"> Tema scuro <span class="material-symbols-outlined"> dark_mode </span> </button>
+    </header>
+
+    <main>
+        <!-- form aggiungi ricetta-->
+        <h2> Aggiungi una ricetta </h2>
+
+        <div class="card">
+            <form>
+                <input type="text" id="nome" name="nome" placeholder="Nome ricetta" required>
+
+                <select name="categoria" id="categoria">
+                    <option value="">--Scegli la categoria--</option>
+                    <option value="PR">Primo</option>
+                    <option value="SC">Secondo</option>
+                    <option value="HM">Hamburger</option>
+                    <option value="DS">Dessert</option>
+                </select>
+
+                <select id="tempo_cottura" name="tempo_cottura">
+                    <option value="">--Scegli il tempo di cottura--</option>
+                    <option value="15">15 minuti</option>
+                    <option value="30">30 minuti</option>
+                    <option value="45">45 minuti</option>
+                    <option value="60">1 ora</option>
+                </select>
+
+                <textarea id="procedimento" placeholder="Scrivi qui il procedimento della tua ricetta..."></textarea>
+
+                <button type="submit" id="aggiungiBtn"> + Aggiungi ricetta </button>
+            </form>
+        </div>
+
+        <br>
+
+        <!-- ricerca della ricetta -->
+        <div class="card">
+            <input type="search" id="cerca" name="q" placeholder=" Cerca una ricetta...">
+            <select id="ordinaPer" name="ordinaPer">
+                <option value="">Ordina per</option>
+                <option value="AZ">Nome (A-Z)</option>
+                <option value="ZA">Nome(Z-A)</option>
+                <option value="TC">Tempo di cottura (crescente)</option>
+                <option value="TD">Tempo di cottura (decrescente)</option>
+            </select>
+        </div>
+
+        <!-- card delle ricette -->
+        <div class="card">
+            <h2>Le mie ricette</h2>
+            <section id="listaRicette "> </section>>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
