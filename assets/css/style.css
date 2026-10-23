@@ -135,6 +135,7 @@ header button:hover {
 
 /*  RICETTE   */
 .singolaRicetta {
+    display: flow-root;
     padding: 15px;
     margin: 12px;
     border: 1px solid #e2e6df;
@@ -162,4 +163,12 @@ header button:hover {
 .cuoreBtn {
     font-size: 20px;
     color: #7c9a78;
+}
+
+.btnRicetta {
+    float: right;
+}
+
+.par {
+    color: #384b3f;
 }

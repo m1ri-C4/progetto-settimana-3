@@ -52,30 +52,47 @@ const ricette = [
 const listaRicette = document.querySelector('#listaRicette');
 
 ricette.forEach(ricetta => {
+
     const div = document.createElement('div');
     div.classList.add('singolaRicetta');
-    div.textContent = `${ricetta.nome} ${ricetta.tempo} minuti`;
+
+    const divBtn = document.createElement('div')
+    divBtn.classList.add('btnRicetta');
+
+    const nome = document.createElement('h3');
+    nome.textContent = ricetta.nome;
+
+    const par = document.createElement('p');
+    par.textContent = `${ricetta.tempo} minuti`;
+    par.classList.add('par');
+
+    div.appendChild(divBtn);
+    div.appendChild(nome);
+    div.appendChild(par);
+
     listaRicette.appendChild(div);
+
+
 
     const fareBtn = document.createElement('button');
     fareBtn.textContent = 'Da fare';
     fareBtn.classList.add('ricetteBtn');
-    div.appendChild(fareBtn);
+    divBtn.appendChild(fareBtn);
 
     const visulizzaBtn = document.createElement('button');
     visulizzaBtn.textContent = 'Visualizza';
     visulizzaBtn.classList.add('ricetteBtn');
-    div.appendChild(visulizzaBtn);
+    divBtn.appendChild(visulizzaBtn);
 
     const cuoreBtn = document.createElement('button');
     cuoreBtn.textContent = '♡';
     cuoreBtn.classList.add('ricetteBtn', 'cuoreBtn');
-    div.appendChild(cuoreBtn);
+    divBtn.appendChild(cuoreBtn);
 
 
     const eliminaBtn = document.createElement('button');
     eliminaBtn.textContent = 'Elimina';
     eliminaBtn.classList.add('ricetteBtn');
-    div.appendChild(eliminaBtn);
+    divBtn.appendChild(eliminaBtn);
 
 });
