@@ -75,7 +75,7 @@ body.temaScuro textarea {
     border: 1px solid #404040;
 }
 
-body.temaScuro .card{
+body.temaScuro .card {
     background-color: #252525;
     color: #F5F5F5;
     border: 1px solid #404040;
@@ -85,7 +85,8 @@ body.temaScuro .singolaRicetta {
     background-color: #252525;
     color: #F5F5F5;
     border: 1px solid #404040;
-    border-left: 4px solid #A5C8A1;;
+    border-left: 4px solid #A5C8A1;
+    ;
 }
 
 body.temaScuro .ricetteBtn {
@@ -101,7 +102,12 @@ body.temaScuro .ricetteBtn:hover {
 body.temaScuro .fareBtn {
     background-color: #A5C8A1;
     color: #151515;
-} 
+}
+
+body.temaScuro footer {
+    background-color: #304a3b;
+    color: #cefce1;
+}
 
 header button .material-symbols-outlined {
     font-size: 22px;
@@ -293,4 +299,13 @@ header button:hover {
 
 .procedimento.visible {
     display: block;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #79a486;
+    color: #fff;
 }
