@@ -125,6 +125,9 @@ ricette.forEach(ricetta => {
         if (cuoreBtn.textContent === '♡') {
             cuoreBtn.textContent = '❤';
             cuoreBtn.classList.add('preferito');
+            setTimeout(() => {
+                alert('Hai messo la ricetta nei preferiti!');
+            }, 50);
         } else {
             cuoreBtn.textContent = '♡';
             cuoreBtn.classList.remove('preferito');
@@ -132,10 +135,18 @@ ricette.forEach(ricetta => {
     });
 
 
-
     const eliminaBtn = document.createElement('button');
+    eliminaBtn.setAttribute('type', 'button');
     eliminaBtn.textContent = 'Elimina';
     eliminaBtn.classList.add('ricetteBtn');
     divBtn.appendChild(eliminaBtn);
 
+    eliminaBtn.addEventListener('click', (e) => {
+        if (div) {
+            div.remove();
+            setTimeout(() => {
+                alert('Hai eliminato la ricetta!');
+            }, 50);
+        }
+    });
 });
