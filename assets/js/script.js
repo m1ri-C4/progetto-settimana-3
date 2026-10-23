@@ -66,93 +66,97 @@ const ricette = [
 
 const listaRicette = document.querySelector('#listaRicette');
 
-ricette.forEach(ricetta => {
+function mostraRicette() {
+    listaRicette.textContent = '';
+    ricette.forEach(ricetta => {
 
-    const div = document.createElement('div');
-    div.classList.add('singolaRicetta');
+        const div = document.createElement('div');
+        div.classList.add('singolaRicetta');
 
-    const divBtn = document.createElement('div')
-    divBtn.classList.add('btnRicetta');
+        const divBtn = document.createElement('div')
+        divBtn.classList.add('btnRicetta');
 
-    const nome = document.createElement('h3');
-    nome.textContent = ricetta.nome;
+        const nome = document.createElement('h3');
+        nome.textContent = ricetta.nome;
 
-    const par = document.createElement('p');
-    par.textContent = `${ricetta.tempo} minuti`;
-    par.classList.add('par');
+        const par = document.createElement('p');
+        par.textContent = `${ricetta.tempo} minuti`;
+        par.classList.add('par');
 
-    div.appendChild(divBtn);
-    div.appendChild(nome);
-    div.appendChild(par);
+        div.appendChild(divBtn);
+        div.appendChild(nome);
+        div.appendChild(par);
 
-    listaRicette.appendChild(div);
+        listaRicette.appendChild(div);
 
-    const fareBtn = document.createElement('button');
-    fareBtn.textContent = 'Da fare';
-    fareBtn.classList.add('ricetteBtn', 'statoBtn');
-    divBtn.appendChild(fareBtn);
+        const fareBtn = document.createElement('button');
+        fareBtn.textContent = 'Da fare';
+        fareBtn.classList.add('ricetteBtn', 'statoBtn');
+        divBtn.appendChild(fareBtn);
 
-    fareBtn.addEventListener('click', (e) => {
-        if (fareBtn.textContent === 'Da fare') {
-            fareBtn.classList.add('fareBtn');
-            fareBtn.textContent = 'Fatto';
-        } else {
-            fareBtn.classList.remove('fareBtn');
-            fareBtn.textContent = 'Da fare';
-        }
-        aggiornaContatore();
-    });
-
-    const visulizzaBtn = document.createElement('button');
-    visulizzaBtn.textContent = 'Visualizza';
-    visulizzaBtn.classList.add('ricetteBtn');
-    divBtn.appendChild(visulizzaBtn);
-
-    const cardProcedimento = document.createElement('div');
-    visulizzaBtn.addEventListener('click', (e) => {
-        cardProcedimento.classList.toggle('visible');
-    });
-
-    cardProcedimento.textContent = ricetta.procedimento;
-    cardProcedimento.classList.add('procedimento');
-    div.appendChild(cardProcedimento);
-
-
-    const cuoreBtn = document.createElement('button');
-    cuoreBtn.textContent = '♡';
-    cuoreBtn.classList.add('ricetteBtn', 'cuoreBtn');
-    divBtn.appendChild(cuoreBtn);
-    cuoreBtn.addEventListener('click', (e) => {
-        if (cuoreBtn.textContent === '♡') {
-            cuoreBtn.textContent = '❤';
-            cuoreBtn.classList.add('preferito');
-            setTimeout(() => {
-                alert('Hai messo la ricetta nei preferiti!');
-            }, 50);
-        } else {
-            cuoreBtn.textContent = '♡';
-            cuoreBtn.classList.remove('preferito');
-        }
-        aggiornaContatore();
-    });
-
-
-    const eliminaBtn = document.createElement('button');
-    eliminaBtn.setAttribute('type', 'button');
-    eliminaBtn.textContent = 'Elimina';
-    eliminaBtn.classList.add('ricetteBtn');
-    divBtn.appendChild(eliminaBtn);
-
-    eliminaBtn.addEventListener('click', (e) => {
-        if (div) {
-            div.remove();
-            setTimeout(() => {
-                alert('Hai eliminato la ricetta!');
-            }, 50);
+        fareBtn.addEventListener('click', (e) => {
+            if (fareBtn.textContent === 'Da fare') {
+                fareBtn.classList.add('fareBtn');
+                fareBtn.textContent = 'Fatto';
+            } else {
+                fareBtn.classList.remove('fareBtn');
+                fareBtn.textContent = 'Da fare';
+            }
             aggiornaContatore();
-        }
+        });
+
+        const visulizzaBtn = document.createElement('button');
+        visulizzaBtn.textContent = 'Visualizza';
+        visulizzaBtn.classList.add('ricetteBtn');
+        divBtn.appendChild(visulizzaBtn);
+
+        const cardProcedimento = document.createElement('div');
+        visulizzaBtn.addEventListener('click', (e) => {
+            cardProcedimento.classList.toggle('visible');
+        });
+
+        cardProcedimento.textContent = ricetta.procedimento;
+        cardProcedimento.classList.add('procedimento');
+        div.appendChild(cardProcedimento);
+
+
+        const cuoreBtn = document.createElement('button');
+        cuoreBtn.textContent = '♡';
+        cuoreBtn.classList.add('ricetteBtn', 'cuoreBtn');
+        divBtn.appendChild(cuoreBtn);
+        cuoreBtn.addEventListener('click', (e) => {
+            if (cuoreBtn.textContent === '♡') {
+                cuoreBtn.textContent = '❤';
+                cuoreBtn.classList.add('preferito');
+                setTimeout(() => {
+                    alert('Hai messo la ricetta nei preferiti!');
+                }, 50);
+            } else {
+                cuoreBtn.textContent = '♡';
+                cuoreBtn.classList.remove('preferito');
+            }
+            aggiornaContatore();
+        });
+
+
+        const eliminaBtn = document.createElement('button');
+        eliminaBtn.setAttribute('type', 'button');
+        eliminaBtn.textContent = 'Elimina';
+        eliminaBtn.classList.add('ricetteBtn');
+        divBtn.appendChild(eliminaBtn);
+
+        eliminaBtn.addEventListener('click', (e) => {
+            if (div) {
+                div.remove();
+                setTimeout(() => {
+                    alert('Hai eliminato la ricetta!');
+                }, 50);
+                aggiornaContatore();
+            }
+        });
     });
-});
+    aggiornaContatore();
+}
 
 const contatore = document.querySelector('#contatore');
 const progresso = document.querySelector('#progresso');
@@ -165,10 +169,10 @@ function aggiornaContatore() {
     let fatte = 0;
     let totale = tutteRicette.length;
 
+    statistiche.textContent = '';
     tutteRicette.forEach((ricetta) => {
         const pulsante = ricetta.querySelector('.statoBtn');
         const cuore = ricetta.querySelector('.cuoreBtn');
-        statistiche.textContent = '';
 
         if (cuore.classList.contains('preferito')) {
             preferiti++;
@@ -225,7 +229,109 @@ function aggiornaContatore() {
     statistiche.appendChild(testoPreferite);
     statistiche.appendChild(preferite);
 
-
     progresso.style.width = `${(fatte / totale) * 100}%`
 };
-aggiornaContatore();
+mostraRicette();
+
+const aggiungiBtn = document.querySelector('#aggiungiBtn');
+const nomeInput = document.querySelector('#nome');
+const categoriaInput = document.querySelector('#categoria');
+const tempoInput = document.querySelector('#tempo_cottura');
+const procedimentoInput = document.querySelector('#procedimento');
+const messaggioErrore = document.querySelector('#messaggioErrore');
+
+
+aggiungiBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    messaggioErrore.textContent = '';
+
+    const nome = nomeInput.value;
+    const categoria = categoriaInput.value;
+    const tempo = tempoInput.value;
+    const procedimento = procedimentoInput.value;
+
+    if (nome.trim() === '') {
+        messaggioErrore.textContent = ' *Inserisci il nome della ricetta!';
+        return;
+    }
+
+    if (categoria.trim() === '') {
+        messaggioErrore.textContent = ' *Seleziona la categoria!';
+        return;
+    }
+
+    if (tempo.trim() === '') {
+        messaggioErrore.textContent = ' *Seleziona il tempo di cottura!';
+        return;
+    }
+
+    if (procedimento.trim() === '') {
+        messaggioErrore.textContent = ' *Inserisci il procedimento!';
+        return;
+    }
+
+    const nuovoId = Date.now();
+    const nuovaRicetta = {
+        id: nuovoId,
+        nome: nome,
+        categoria: categoria,
+        tempo: tempo,
+        procedimento: procedimento,
+        preferito: false
+    };
+
+    ricette.push(nuovaRicetta);
+    mostraRicette();
+});
+
+const cercaInput = document.querySelector('#cerca');
+
+
+cercaInput.addEventListener('input', (e) => {
+    const testoCercato = cercaInput.value.toLowerCase();
+    const tutteRicette = document.querySelectorAll('.singolaRicetta');
+
+    tutteRicette.forEach((ricetta) => {
+        const nomeRicetta = ricetta.querySelector('h3').textContent.toLocaleLowerCase();
+        if (nomeRicetta.includes(testoCercato)) {
+            ricetta.style.display = '';
+        } else {
+            ricetta.style.display = 'none';
+        }
+    });
+});
+
+const filtraPer = document.querySelector('#filtraPer');
+
+filtraPer.addEventListener('change', () => {
+    const filtroScelto = filtraPer.value;
+    const tutteRicette = document.querySelectorAll('.singolaRicetta');
+
+    tutteRicette.forEach((ricetta) => {
+        const pulsante = ricetta.querySelector('.statoBtn');
+
+        const statoRicetta = pulsante.textContent;
+        const cuore = ricetta.querySelector('.cuoreBtn')
+
+        if (filtroScelto === 'FT') {
+            
+            if (statoRicetta === 'Fatto') {
+                ricetta.style.display = '';
+            } else {
+                ricetta.style.display = 'none';
+            }
+
+        } else if (filtroScelto === 'TT') {
+            ricetta.style.display = '';
+
+        } else if (filtroScelto == 'PR') {
+
+            if (cuore.classList.contains('preferito')) {
+                ricetta.style.display = '';
+            } else {
+                ricetta.style.display = 'none';
+            }
+        }
+    });
+
+});

@@ -172,6 +172,13 @@ header button:hover {
     color: #fff;
 }
 
+#messaggioErrore {
+    color: #b34747;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 5px 18px;
+}
+
 /*  RICETTE   */
 .singolaRicetta {
     display: flow-root;
