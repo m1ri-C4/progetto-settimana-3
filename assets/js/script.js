@@ -66,6 +66,7 @@ const ricette = [
 
 const listaRicette = document.querySelector('#listaRicette');
 
+// realizzazione della sezione ricette 
 function mostraRicette() {
     listaRicette.textContent = '';
     ricette.forEach(ricetta => {
@@ -89,6 +90,7 @@ function mostraRicette() {
 
         listaRicette.appendChild(div);
 
+        // realizzazione dei bottoni ed eventi 
         const fareBtn = document.createElement('button');
         fareBtn.textContent = 'Da fare';
         fareBtn.classList.add('ricetteBtn', 'statoBtn');
@@ -158,10 +160,12 @@ function mostraRicette() {
     aggiornaContatore();
 }
 
+//richiamo le classi utili alla funzione successiva 
 const contatore = document.querySelector('#contatore');
 const progresso = document.querySelector('#progresso');
 const statistiche = document.querySelector('#statistiche');
 
+//funzione e realizzazione html che aggiorna il contatore
 function aggiornaContatore() {
     const tutteRicette = document.querySelectorAll('.singolaRicetta');
     let preferiti = 0;
@@ -233,6 +237,7 @@ function aggiornaContatore() {
 };
 mostraRicette();
 
+// richiamo le classi del form
 const aggiungiBtn = document.querySelector('#aggiungiBtn');
 const nomeInput = document.querySelector('#nome');
 const categoriaInput = document.querySelector('#categoria');
@@ -240,7 +245,7 @@ const tempoInput = document.querySelector('#tempo_cottura');
 const procedimentoInput = document.querySelector('#procedimento');
 const messaggioErrore = document.querySelector('#messaggioErrore');
 
-
+//  funzione aggiungi ricetta
 aggiungiBtn.addEventListener('click', (e) => {
     e.preventDefault();
     messaggioErrore.textContent = '';
@@ -286,7 +291,7 @@ aggiungiBtn.addEventListener('click', (e) => {
 
 const cercaInput = document.querySelector('#cerca');
 
-
+// funzione cerca
 cercaInput.addEventListener('input', (e) => {
     const testoCercato = cercaInput.value.toLowerCase();
     const tutteRicette = document.querySelectorAll('.singolaRicetta');
@@ -303,6 +308,7 @@ cercaInput.addEventListener('input', (e) => {
 
 const filtraPer = document.querySelector('#filtraPer');
 
+//funzione che filtra
 filtraPer.addEventListener('change', () => {
     const filtroScelto = filtraPer.value;
     const tutteRicette = document.querySelectorAll('.singolaRicetta');
@@ -339,6 +345,7 @@ filtraPer.addEventListener('change', () => {
 const darkMode = document.querySelector('#darkMode');
 const lightMode = document.querySelector('#lightMode');
 
+// funzioni dei bottoni light e dark mode
 darkMode.addEventListener('click', (e) => {
     document.body.classList.add('temaScuro');
     darkMode.style.display = 'none';
