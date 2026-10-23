@@ -53,6 +53,7 @@ const listaRicette = document.querySelector('#listaRicette');
 
 ricette.forEach(ricetta => {
     const div = document.createElement('div');
+    div.classList.add('singolaRicetta');
     div.textContent = `${ricetta.nome} ${ricetta.tempo} minuti`;
     listaRicette.appendChild(div);
 
