@@ -35,6 +35,10 @@ header button {
     font-weight: 600;
 }
 
+#lightMode {
+    display: none;
+}
+
 header button .material-symbols-outlined {
     font-size: 22px;
     vertical-align: middle;
@@ -75,7 +79,7 @@ h2 {
 #categoria,
 #tempo_cottura,
 #cerca,
-#ordinaPer {
+#filtraPer {
     display: inline-block;
     width: 30%;
     padding: 12px;
@@ -84,6 +88,10 @@ h2 {
     border: 1px solid #7c9a78;
     font-size: 0.9em;
     color: #384b3f;
+}
+
+#cerca {
+    width: 63%;
 }
 
 form textarea {

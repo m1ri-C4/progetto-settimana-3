@@ -13,7 +13,8 @@
 <body>
 
     <header>
-        <button id="temaBtn"> <span class="material-symbols-outlined"> dark_mode </span>Tema scuro </button>
+        <button id="darkMode"> <span class="material-symbols-outlined"> dark_mode </span>Tema scuro </button>
+        <button id="lightMode"> <span class="material-symbols-outlined"> light_mode </span>Tema chiaro</button>
         <h1> <span class="material-symbols-outlined"> chef_hat </span> MyRecipe </h1>
         <p> Il tuo ricettario personale </p>
 
@@ -22,7 +23,7 @@
     <br>
     <main>
         <!-- form aggiungi ricetta-->
-        <div class="card">   
+        <div class="card">
             <h2> Aggiungi una ricetta </h2>
             <form>
                 <input type="text" id="nome" name="nome" placeholder="Nome ricetta" required>
@@ -54,15 +55,22 @@
         <!-- ricerca della ricetta -->
         <div class="card">
             <input type="search" id="cerca" name="q" placeholder=" Cerca una ricetta...">
-            <select id="ordinaPer" name="ordinaPer">
-                <option value="">Ordina per</option>
-                <option value="AZ">Nome (A-Z)</option>
-                <option value="ZA">Nome(Z-A)</option>
-                <option value="TC">Tempo di cottura (crescente)</option>
-                <option value="TD">Tempo di cottura (decrescente)</option>
+            <select id="filtraPer" name="filtraPer">
+                <option value="TT">Tutti</option>
+                <option value="AZ">Fatti</option>
+                <option value="ZA">Preferiti</option>
             </select>
         </div>
+
         <br>
+
+        <!-- card dei conteggi -->
+        <div class="card">
+            <section id="contatore"> </section>
+        </div>
+
+        <br>
+
         <!-- card delle ricette -->
         <div class="card">
             <h2>Le mie ricette</h2>
