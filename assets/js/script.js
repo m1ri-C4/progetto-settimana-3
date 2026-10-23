@@ -1,6 +1,6 @@
 const ricette = [
     {
-        id: Date.now(),
+        id: 1,
         nome: 'Pasta al pomodoro',
         categoria: 'PR',
         tempo: 20,
@@ -8,7 +8,7 @@ const ricette = [
         preferito: false
     },
     {
-        id: Date.now(),
+        id: 2,
         nome: "Risotto ai funghi",
         categoria: "PR",
         tempo: 45,
@@ -16,7 +16,7 @@ const ricette = [
         preferito: false
     },
     {
-        id: Date.now(),
+        id: 3,
         nome: "Pollo al limone",
         categoria: "SC",
         tempo: 30,
@@ -24,7 +24,7 @@ const ricette = [
         preferito: false
     },
     {
-        id: Date.now(),
+        id: 4,
         nome: "Hamburger fatto in casa",
         categoria: "HM",
         tempo: 30,
@@ -32,7 +32,7 @@ const ricette = [
         preferito: false
     },
     {
-        id: Date.now(),
+        id: 5,
         nome: "Brownies al cioccolato",
         categoria: "DS",
         tempo: 45,
@@ -40,7 +40,7 @@ const ricette = [
         preferito: false
     },
     {
-        id: Date.now(),
+        id: 6,
         nome: "Pancake alla banana",
         categoria: "DS",
         tempo: 15,
@@ -51,16 +51,30 @@ const ricette = [
 
 const listaRicette = document.querySelector('#listaRicette');
 
-ricette.forEach (ricetta =>{
+ricette.forEach(ricetta => {
     const div = document.createElement('div');
-    div.textContent= `${ricetta.nome} ${ricetta.tempo} minuti`;
+    div.textContent = `${ricetta.nome} ${ricetta.tempo} minuti`;
     listaRicette.appendChild(div);
 
     const fareBtn = document.createElement('button');
     fareBtn.textContent = 'Da fare';
-    listaRicette.appendChild(fareBtn);
+    fareBtn.classList.add('ricetteBtn');
+    div.appendChild(fareBtn);
 
-    const eliminaBtn =document.createElement('button');
+    const visulizzaBtn = document.createElement('button');
+    visulizzaBtn.textContent = 'Visualizza';
+    visulizzaBtn.classList.add('ricetteBtn');
+    div.appendChild(visulizzaBtn);
+
+    const cuoreBtn = document.createElement('button');
+    cuoreBtn.textContent = '♡';
+    cuoreBtn.classList.add('ricetteBtn', 'cuoreBtn');
+    div.appendChild(cuoreBtn);
+
+
+    const eliminaBtn = document.createElement('button');
     eliminaBtn.textContent = 'Elimina';
-    listaRicette.appendChild(eliminaBtn);
+    eliminaBtn.classList.add('ricetteBtn');
+    div.appendChild(eliminaBtn);
+
 });

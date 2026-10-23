@@ -18,6 +18,10 @@ main {
     margin: 0 auto;
 }
 
+main button {
+    font-family: "Montserrat", sans-serif;
+}
+
 /* HEADER */
 header {
     padding: 30px 50px;
@@ -121,4 +125,34 @@ form button {
     cursor: pointer;
     margin: 20px;
     font-size: 1em;
+}
+
+form button:hover,
+header button:hover {
+    background-color: #5f7f5b;
+    color: #fff;
+}
+
+/*  RICETTE   */
+
+.ricetteBtn {
+    display: inline-block;
+    vertical-align: middle;
+    height: 42px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+    background-color: #e2e6df;
+}
+
+.ricetteBtn:hover {
+    background-color: #7c9a78;
+    color:#fff
+}
+
+.cuoreBtn{
+    font-size: 20px;
+    color: #7c9a78;
 }
