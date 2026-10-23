@@ -89,7 +89,7 @@ ricette.forEach(ricetta => {
 
     const fareBtn = document.createElement('button');
     fareBtn.textContent = 'Da fare';
-    fareBtn.classList.add('ricetteBtn');
+    fareBtn.classList.add('ricetteBtn', 'statoBtn');
     divBtn.appendChild(fareBtn);
 
     fareBtn.addEventListener('click', (e) => {
@@ -100,6 +100,7 @@ ricette.forEach(ricetta => {
             fareBtn.classList.remove('fareBtn');
             fareBtn.textContent = 'Da fare';
         }
+        aggiornaContatore();
     });
 
     const visulizzaBtn = document.createElement('button');
@@ -132,6 +133,7 @@ ricette.forEach(ricetta => {
             cuoreBtn.textContent = '♡';
             cuoreBtn.classList.remove('preferito');
         }
+        aggiornaContatore();
     });
 
 
@@ -147,6 +149,34 @@ ricette.forEach(ricetta => {
             setTimeout(() => {
                 alert('Hai eliminato la ricetta!');
             }, 50);
+            aggiornaContatore();
         }
     });
 });
+
+const contatore = document.querySelector('#contatore');
+
+function aggiornaContatore() {
+    const tutteRicette = document.querySelectorAll('.singolaRicetta');
+    let preferiti = 0;
+    let daFare = 0;
+    let fatte = 0;
+    let totale = tutteRicette.length;
+
+    tutteRicette.forEach((ricetta) => {
+        const pulsante = ricetta.querySelector('.statoBtn');
+        const cuore = ricetta.querySelector('.cuoreBtn');
+
+        if (cuore.classList.contains('preferito')) {
+            preferiti++;
+        }
+
+        if (pulsante.textContent === 'Da fare') {
+            daFare++;
+        } else {
+            fatte++;
+        }
+    });
+    contatore.textContent = `Totale ricette: ${totale} | Da fare: ${daFare} | Fatte: ${fatte} | Preferite: ${preferiti}`;
+};
+aggiornaContatore();
