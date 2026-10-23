@@ -155,6 +155,8 @@ ricette.forEach(ricetta => {
 });
 
 const contatore = document.querySelector('#contatore');
+const progresso = document.querySelector('#progresso');
+const statistiche = document.querySelector('#statistiche');
 
 function aggiornaContatore() {
     const tutteRicette = document.querySelectorAll('.singolaRicetta');
@@ -166,17 +168,64 @@ function aggiornaContatore() {
     tutteRicette.forEach((ricetta) => {
         const pulsante = ricetta.querySelector('.statoBtn');
         const cuore = ricetta.querySelector('.cuoreBtn');
+        statistiche.textContent = '';
 
         if (cuore.classList.contains('preferito')) {
             preferiti++;
-        }
+        };
 
         if (pulsante.textContent === 'Da fare') {
             daFare++;
         } else {
             fatte++;
-        }
+        };
     });
-    contatore.textContent = `Totale ricette: ${totale} | Da fare: ${daFare} | Fatte: ${fatte} | Preferite: ${preferiti}`;
+
+    const numeroTot = document.createElement('span');
+    numeroTot.textContent = totale;
+    numeroTot.classList.add('numero');
+
+    const testoTot = document.createElement('span');
+    testoTot.textContent = 'Ricette';
+    testoTot.classList.add('testo');
+
+    statistiche.appendChild(testoTot);
+    statistiche.appendChild(numeroTot);
+
+    const daFareTot = document.createElement('span');
+    daFareTot.textContent = daFare;
+    daFareTot.classList.add('numero');
+
+    const testoDafareTot = document.createElement('span');
+    testoDafareTot.textContent = 'Da fare';
+    testoDafareTot.classList.add('testo');
+
+    statistiche.appendChild(testoDafareTot);
+    statistiche.appendChild(daFareTot);
+
+    const fatti = document.createElement('span');
+    fatti.textContent = fatte;
+    fatti.classList.add('numero');
+
+    const testoFatte = document.createElement('span');
+    testoFatte.textContent = 'Fatte';
+    testoFatte.classList.add('testo');
+
+    statistiche.appendChild(testoFatte);
+    statistiche.appendChild(fatti);
+
+    const preferite = document.createElement('span');
+    preferite.textContent = preferiti;
+    preferite.classList.add('numero');
+
+    const testoPreferite = document.createElement('span');
+    testoPreferite.textContent = 'Preferite';
+    testoPreferite.classList.add('testo');
+
+    statistiche.appendChild(testoPreferite);
+    statistiche.appendChild(preferite);
+
+
+    progresso.style.width = `${(fatte / totale) * 100}%`
 };
 aggiornaContatore();
