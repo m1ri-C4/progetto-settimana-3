@@ -48,3 +48,19 @@ const ricette = [
         preferito: false
     }
 ];
+
+const listaRicette = document.querySelector('#listaRicette');
+
+ricette.forEach (ricetta =>{
+    const div = document.createElement('div');
+    div.textContent= `${ricetta.nome} ${ricetta.tempo} minuti`;
+    listaRicette.appendChild(div);
+
+    const fareBtn = document.createElement('button');
+    fareBtn.textContent = 'Da fare';
+    listaRicette.appendChild(fareBtn);
+
+    const eliminaBtn =document.createElement('button');
+    eliminaBtn.textContent = 'Elimina';
+    listaRicette.appendChild(eliminaBtn);
+});

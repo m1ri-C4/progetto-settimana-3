@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *,
 *::after,
 *::before {
@@ -11,6 +13,7 @@ body {
 }
 
 main {
+    font-family: "Montserrat", sans-serif;
     max-width: 992px;
     margin: 0 auto;
 }
@@ -81,6 +84,7 @@ h2 {
 #cerca,
 #filtraPer {
     display: inline-block;
+    font-family: "Montserrat", sans-serif;
     width: 30%;
     padding: 12px;
     margin: 8px 5px 5px 20px;
@@ -96,12 +100,13 @@ h2 {
 
 form textarea {
     display: block;
+    font-family: "Montserrat", sans-serif;
     min-height: 80px;
     width: 96%;
     margin: 20px;
     border-radius: 10px;
     border: 1px solid #7c9a78;
-    font-size: 1.2em;
+    font-size: 1em;
     padding: 12px;
     color: #384b3f;
 }
