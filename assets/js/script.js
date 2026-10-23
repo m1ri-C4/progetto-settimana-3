@@ -314,7 +314,7 @@ filtraPer.addEventListener('change', () => {
         const cuore = ricetta.querySelector('.cuoreBtn')
 
         if (filtroScelto === 'FT') {
-            
+
             if (statoRicetta === 'Fatto') {
                 ricetta.style.display = '';
             } else {
@@ -334,4 +334,19 @@ filtraPer.addEventListener('change', () => {
         }
     });
 
+});
+
+const darkMode = document.querySelector('#darkMode');
+const lightMode = document.querySelector('#lightMode');
+
+darkMode.addEventListener('click', (e) => {
+    document.body.classList.add('temaScuro');
+    darkMode.style.display = 'none';
+    lightMode.style.display = 'inline-block';
+});
+
+lightMode.addEventListener('click', (e) => {
+    document.body.classList.remove('temaScuro');
+    lightMode.style.display = 'none';
+    darkMode.style.display = 'inline-block';
 });
