@@ -4,7 +4,10 @@ const ricette = [
         nome: 'Pasta al pomodoro',
         categoria: 'PR',
         tempo: 20,
-        procedimento: "Porta a ebollizione l'acqua e cuoci la pasta. In una padella fai rosolare l'aglio con un filo d'olio. Aggiungi la passata di pomodoro e lascia cuocere per 10min. Unisci la pasta al sugo e impiatta!",
+        procedimento: `1. Porta a ebollizione l'acqua e cuoci la pasta. 
+        2. In una padella fai rosolare l'aglio con un filo d'olio. 
+        3. Aggiungi la passata di pomodoro e lascia cuocere per 10min. 
+        4. Unisci la pasta al sugo.`,
         preferito: false
     },
     {
@@ -12,7 +15,11 @@ const ricette = [
         nome: "Risotto ai funghi",
         categoria: "PR",
         tempo: 45,
-        procedimento: "Pulisci e taglia i funghi a fettine. In una padella fai soffriggere la cipolla tritata con un filo d'olio. Aggiungi i funghi e lasciali cuocere per qualche minuto. Versa il riso e fallo tostare, poi aggiungi gradualmente il brodo vegetale caldo, mescolando spesso. Dopo circa 18 minuti, spegni il fuoco e manteca con burro e parmigiano.",
+        procedimento: `1. Pulisci e taglia i funghi a fettine. 
+        2. In una padella fai soffriggere la cipolla tritata con un filo d'olio. 
+        3. Aggiungi i funghi e lasciali cuocere per qualche minuto. 
+        4. Versa il riso e fallo tostare, poi aggiungi gradualmente il brodo vegetale caldo, mescolando spesso. 
+        5. Dopo circa 18 minuti, spegni il fuoco e manteca con burro e parmigiano.`,
         preferito: false
     },
     {
@@ -20,7 +27,9 @@ const ricette = [
         nome: "Pollo al limone",
         categoria: "SC",
         tempo: 30,
-        procedimento: "Taglia il petto di pollo a bocconcini e infarinalo leggermente. Scalda un filo d'olio in una padella e aggiungi il pollo. Fallo rosolare su entrambi i lati, poi versa il succo di un limone e qualche cucchiaio d'acqua. Copri e lascia cuocere a fuoco medio per circa 15 minuti, fino a quando il pollo sarà completamente cotto e si sarà formata una salsa cremosa.",
+        procedimento: `1. Taglia il petto di pollo a bocconcini e infarinalo leggermente. 2. Scalda un filo d'olio in una padella e aggiungi il pollo. 
+        3. Fallo rosolare su entrambi i lati, poi versa il succo di un limone e qualche cucchiaio d'acqua. 
+        4. Copri e lascia cuocere a fuoco medio per circa 15 minuti, fino a quando il pollo sarà completamente cotto e si sarà formata una salsa cremosa.`,
         preferito: false
     },
     {
@@ -28,7 +37,9 @@ const ricette = [
         nome: "Hamburger fatto in casa",
         categoria: "HM",
         tempo: 30,
-        procedimento: "Condisci la carne macinata con sale, pepe e le spezie che preferisci. Forma un hamburger e cuocilo in una padella calda, girandolo durante la cottura fino a quando sarà ben cotto anche al centro. Taglia il panino a metà e tostalo leggermente. Aggiungi lattuga, pomodoro, hamburger e la salsa che preferisci. Chiudi il panino e servi caldo.",
+        procedimento: `1. Condisci la carne macinata con sale, pepe e le spezie che preferisci. 
+        2. Forma un hamburger e cuocilo in una padella calda, girandolo durante la cottura fino a quando sarà ben cotto anche al centro. 
+        3. Taglia il panino a metà e tostalo leggermente. 4. Aggiungi lattuga, pomodoro, hamburger e la salsa che preferisci. Chiudi il panino e servi caldo.`,
         preferito: false
     },
     {
@@ -36,7 +47,9 @@ const ricette = [
         nome: "Brownies al cioccolato",
         categoria: "DS",
         tempo: 45,
-        procedimento: "Sciogli 150 g di cioccolato fondente con 100 g di burro e lascia intiepidire. In una ciotola mescola 2 uova con 120 g di zucchero. Aggiungi il cioccolato fuso, 80 g di farina e un pizzico di sale. Mescola fino a ottenere un composto omogeneo. Versa in una teglia rivestita di carta forno e cuoci a 180°C per circa 20-25 minuti. Lascia raffreddare prima di tagliare a quadrotti.",
+        procedimento: `1. Sciogli 150 g di cioccolato fondente con 100 g di burro e lascia intiepidire. 2.In una ciotola mescola 2 uova con 120 g di zucchero. 
+        3. Aggiungi il cioccolato fuso, 80 g di farina e un pizzico di sale. 4. Mescola fino a ottenere un composto omogeneo. 
+        5. Versa in una teglia rivestita di carta forno e cuoci a 180°C per circa 20-25 minuti. 6. Lascia raffreddare prima di tagliare a quadrotti.`,
         preferito: false
     },
     {
@@ -44,7 +57,9 @@ const ricette = [
         nome: "Pancake alla banana",
         categoria: "DS",
         tempo: 15,
-        procedimento: "Schiaccia una banana matura con una forchetta. Aggiungi un uovo, 50 g di farina e mezzo cucchiaino di lievito per dolci. Mescola fino a ottenere una pastella omogenea. Scalda una padella antiaderente e versa piccole quantità di impasto. Cuoci ogni pancake per circa 2 minuti per lato, fino a doratura. Servi con frutta fresca, miele o sciroppo d'acero.",
+        procedimento: ` 1. Schiaccia una banana matura con una forchetta. 2. Aggiungi un uovo, 50 g di farina e mezzo cucchiaino di lievito per dolci. 
+        3. Mescola fino a ottenere una pastella omogenea. 4. Scalda una padella antiaderente e versa piccole quantità di impasto. 
+        5. Cuoci ogni pancake per circa 2 minuti per lato, fino a doratura. 6. Servi con frutta fresca, miele o sciroppo d'acero.`,
         preferito: false
     }
 ];
@@ -72,22 +87,50 @@ ricette.forEach(ricetta => {
 
     listaRicette.appendChild(div);
 
-
-
     const fareBtn = document.createElement('button');
     fareBtn.textContent = 'Da fare';
     fareBtn.classList.add('ricetteBtn');
     divBtn.appendChild(fareBtn);
+
+    fareBtn.addEventListener('click', (e) => {
+        if (fareBtn.textContent === 'Da fare') {
+            fareBtn.classList.add('fareBtn');
+            fareBtn.textContent = 'Fatto';
+        } else {
+            fareBtn.classList.remove('fareBtn');
+            fareBtn.textContent = 'Da fare';
+        }
+    });
 
     const visulizzaBtn = document.createElement('button');
     visulizzaBtn.textContent = 'Visualizza';
     visulizzaBtn.classList.add('ricetteBtn');
     divBtn.appendChild(visulizzaBtn);
 
+    const cardProcedimento = document.createElement('div');
+    visulizzaBtn.addEventListener('click', (e) => {
+        cardProcedimento.classList.toggle('visible');
+    });
+
+    cardProcedimento.textContent = ricetta.procedimento;
+    cardProcedimento.classList.add('procedimento');
+    div.appendChild(cardProcedimento);
+
+
     const cuoreBtn = document.createElement('button');
     cuoreBtn.textContent = '♡';
     cuoreBtn.classList.add('ricetteBtn', 'cuoreBtn');
     divBtn.appendChild(cuoreBtn);
+    cuoreBtn.addEventListener('click', (e) => {
+        if (cuoreBtn.textContent === '♡') {
+            cuoreBtn.textContent = '❤';
+            cuoreBtn.classList.add('preferito');
+        } else {
+            cuoreBtn.textContent = '♡';
+            cuoreBtn.classList.remove('preferito');
+        }
+    });
+
 
 
     const eliminaBtn = document.createElement('button');
