@@ -52,11 +52,6 @@ body.temaScuro {
     color: #F5F5F5;
 }
 
-body.temaScuro header {
-    background-color: #101010;
-    color: #F5F5F5;
-}
-
 body.temaScuro h1,
 body.temaScuro h2,
 body.temaScuro h3 {
@@ -80,11 +75,6 @@ body.temaScuro textarea {
     border: 1px solid #404040;
 }
 
-body.temaScuro input::placeholder,
-body.temaScuro textarea::placeholder {
-    color: #B5B5B5;
-}
-
 body.temaScuro .card{
     background-color: #252525;
     color: #F5F5F5;
@@ -95,6 +85,7 @@ body.temaScuro .singolaRicetta {
     background-color: #252525;
     color: #F5F5F5;
     border: 1px solid #404040;
+    border-left: 4px solid #A5C8A1;;
 }
 
 body.temaScuro .ricetteBtn {
@@ -110,25 +101,7 @@ body.temaScuro .ricetteBtn:hover {
 body.temaScuro .fareBtn {
     background-color: #A5C8A1;
     color: #151515;
-}
-
-body.temaScuro .numero {
-    color: #A5C8A1;
-}
-
-body.temaScuro .testo {
-    color: #D0D0D0;
-}
-
-body.temaScuro #statistiche{
-    background-color: #252525;
-    color: #F5F5F5
-}
-
-body.temaScuro #progresso{
-    background-color: #a5c8a1;
-}
-
+} 
 
 header button .material-symbols-outlined {
     font-size: 22px;
